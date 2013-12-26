@@ -58,13 +58,13 @@ public class TsRole extends BaseEntity implements java.io.Serializable {
 	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	@Where(clause="ISDELETE <> '1'")
-	@JoinTable(name = "TS_MENU_PERMISSION_ROLE", schema = "dbo", catalog = "pgms", joinColumns = { @JoinColumn(name = "ROLE_ID", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "MENU_PERMISSION_ID", nullable = false, updatable = false) })
+	@JoinTable(name = "TS_MENU_PERMISSION_ROLE", schema = "dbo", catalog = "AdminSystem", joinColumns = { @JoinColumn(name = "ROLE_ID", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "MENU_PERMISSION_ID", nullable = false, updatable = false) })
 	private Set<TsMenuPermission> tsMenuPermissions = new HashSet<TsMenuPermission>(
 			0);
 	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	@Where(clause="ISDELETE <> '1'")
-	@JoinTable(name = "TS_ACTION_PERMISSION_ROLE", schema = "dbo", catalog = "pgms", joinColumns = { @JoinColumn(name = "ROLE_ID", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "ACTION_PERMISSION_ID", nullable = false, updatable = false) })
+	@JoinTable(name = "TS_ACTION_PERMISSION_ROLE", schema = "dbo", catalog = "AdminSystem", joinColumns = { @JoinColumn(name = "ROLE_ID", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "ACTION_PERMISSION_ID", nullable = false, updatable = false) })
 	private Set<TsActionPermission> tsActionPermissions = new HashSet<TsActionPermission>(
 			0);
 

@@ -62,11 +62,11 @@ public class TsUser extends BaseEntity implements java.io.Serializable {
 	private Integer state;
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	@Where(clause="ISDELETE <> '1'")
-	@JoinTable(name = "TS_DEPARTMENT_USER", schema = "dbo", catalog = "pgms", joinColumns = { @JoinColumn(name = "USER_ID", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "DEPARTMENT_ID", nullable = false, updatable = false) })
+	@JoinTable(name = "TS_DEPARTMENT_USER", schema = "dbo", catalog = "AdminSystem", joinColumns = { @JoinColumn(name = "USER_ID", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "DEPARTMENT_ID", nullable = false, updatable = false) })
 	private Set<TsDepartment> tsDepartments = new HashSet<TsDepartment>(0);
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 	@Where(clause="ISDELETE <> '1'")
-	@JoinTable(name = "TS_ROLE_USER", schema = "dbo", catalog = "pgms", joinColumns = { @JoinColumn(name = "USER_ID", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "ROLE_ID", nullable = false, updatable = false) })
+	@JoinTable(name = "TS_ROLE_USER", schema = "dbo", catalog = "AdminSystem", joinColumns = { @JoinColumn(name = "USER_ID", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "ROLE_ID", nullable = false, updatable = false) })
 	private Set<TsRole> tsRoles = new HashSet<TsRole>(0);
 
 	// Constructors
